@@ -44,6 +44,7 @@ public class ebills extends javax.swing.JFrame {
         cprint = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         eprint = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,6 +92,13 @@ public class ebills extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Clear");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -112,6 +120,8 @@ public class ebills extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(118, 118, 118)
                 .addComponent(jButton1)
+                .addGap(30, 30, 30)
+                .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(eprint)
                 .addGap(125, 125, 125))
@@ -137,7 +147,8 @@ public class ebills extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(eprint))
+                    .addComponent(eprint)
+                    .addComponent(jButton2))
                 .addGap(68, 68, 68))
         );
 
@@ -235,6 +246,9 @@ public class ebills extends javax.swing.JFrame {
         
         
         c_id = cid.getText();
+        
+        
+        
         try{
         count = Integer.parseInt(cunit.getText());
         charge = 7.00;
@@ -242,6 +256,7 @@ public class ebills extends javax.swing.JFrame {
         print();
         
         }
+        
         catch(Exception e){
            // e.printStackTrace();
             cprint.setText("Enter approprite unit..");
@@ -259,6 +274,15 @@ public class ebills extends javax.swing.JFrame {
             Logger.getLogger(ebills.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_eprintActionPerformed
+
+    // code on clear button,
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        cprint.setText("");
+        cid.setText("");
+        cname.setText("");
+        cunit.setText("");
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,6 +326,7 @@ public class ebills extends javax.swing.JFrame {
     private javax.swing.JTextField cunit;
     private javax.swing.JButton eprint;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
